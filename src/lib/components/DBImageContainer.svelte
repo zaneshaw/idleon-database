@@ -13,9 +13,9 @@
 {#if dump.length === 0}
 	<span>Loading...</span>
 {:else}
-<div class="flex flex-wrap max-w-full gap-1.5">
-	{#each dump as data}
-		<DbImage {data} />
-	{/each}
-</div>
+	<div class="flex justify-center flex-wrap w-fit gap-1.5">
+		{#each dump as data}
+			<DbImage {data} />
+		{/each}
+	</div>
 {/if}

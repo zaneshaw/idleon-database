@@ -1,11 +1,20 @@
-/* Write your global styles here, in PostCSS syntax */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+	@font-face {
+		font-family: IdleOn;
+		src: url("/fonts/Idleon.woff2") format("woff2");
+	}
+
+	body {
+		background-image: url("https://idleon.wiki/wiki/images/2/24/NightDesertBG.png");
+		@apply text-white;
+	}
+
 	h1 {
-		@apply text-3xl;
+		@apply text-3xl font-idleon;
 	}
 
 	a {

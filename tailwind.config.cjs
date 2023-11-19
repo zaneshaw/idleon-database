@@ -3,8 +3,13 @@ const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
-		extend: {}
-	},
+		extend:
+		{
+		  fontFamily: {
+			'idleon': ['IdleOn', 'sans-serif']
+		  },
+		},
+	  },
 
 	plugins: []
 };
