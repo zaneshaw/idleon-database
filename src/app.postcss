@@ -10,7 +10,7 @@
 
 	body {
 		background-image: url("https://idleon.wiki/wiki/images/2/24/NightDesertBG.png");
-		@apply text-white;
+		@apply text-white text-center;
 	}
 
 	h1 {
@@ -18,12 +18,16 @@
 	}
 
 	a {
-		@apply text-blue-500 underline;
+		@apply link;
 	}
 }
 
 @layer components {
 	.pixelated {
 		image-rendering: pixelated;
+	}
+
+	.link {
+		@apply text-blue-500 cursor-pointer hover:underline;
 	}
 }
