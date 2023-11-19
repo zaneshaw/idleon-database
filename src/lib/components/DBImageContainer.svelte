@@ -2,7 +2,8 @@
 	import { onMount } from "svelte";
 	import DbImage from "./DBImage.svelte";
 
-	const dumpUrl = "https://raw.githubusercontent.com/zaneshaw/idleon-database-dumper/main/debug_dump.json";
+	// TODO: Cache dump in store
+	const dumpUrl = "https://raw.githubusercontent.com/zaneshaw/idleon-database-dumper/main/dump.json";
 	let dump: any[] = [];
 
 	onMount(async () => {

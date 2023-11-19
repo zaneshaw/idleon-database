@@ -1,16 +1,19 @@
 import { error } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
 
-export const load: PageLoad = ({ params }) => {
-	// if (params.slug EXISTS) {
+export const load: PageLoad = async ({ params }) => {
+	// TODO: Cache dump in store
+	const dumpUrl = "https://raw.githubusercontent.com/zaneshaw/idleon-database-dumper/main/dump.json";
+	let dump: any[] = (await fetch(dumpUrl).then((res) => res.json())).dump;
+	const img = dump.find((x) => x.name === params.img);
 
-	// }
+	if (img !== undefined) {
+		return {
+			name: img.name,
+			timestamp: img.timestamp,
+			url: img.url
+		};
+	}
 
-	return {
-		name: "'Str'Ess_Tested_Garb.png",
-		timestamp: "2022-04-09T03:15:39Z",
-		url: "https://idleon.wiki/wiki/images/9/96/%27Str%27Ess_Tested_Garb.png"
-	};
-
-	throw error(404, "Not found");
+	throw error(404, "Image not found");
 };
