@@ -10,7 +10,7 @@
 <h1>{data.name}</h1>
 <div>
 	<div class="flex justify-center">
-		<img src={data.url} alt={data.name} title={data.name} class={enlarged ? "w-2/3 pixelated" : ""} />
+		<img src={data.url} alt={data.name} title={data.name} class={enlarged ? "min-w-[66.666667%] pixelated" : ""} />
 	</div>
 	<button on:click={() => (enlarged = !enlarged)} class="link">[{enlarged ? "Original" : "Enlarge"}]</button>
 </div>
