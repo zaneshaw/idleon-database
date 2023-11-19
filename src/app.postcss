@@ -2,3 +2,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	h1 {
+		@apply text-3xl;
+	}
+
+	a {
+		@apply text-blue-500 underline;
+	}
+}
+
+@layer components {
+	.pixelated {
+		image-rendering: pixelated;
+	}
+}
